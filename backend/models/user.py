@@ -1,18 +1,16 @@
-from typing import List
-from typing import Optional
-from sqlalchemy import ForeignKey
-from sqlalchemy import String
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
 
-class User(DeclarativeBase):
-    __tablename__ = "user"
-    id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str] = mapped_column(String(30))
-    fullname: Mapped[Optional[str]]
-    email_address: Mapped[str] = mapped_column(String(50))
-    def __repr__(self) -> str:
-        return f"User(id={self.id!r}, name={self.name!r}, fullname={self.fullname!r})"
-    
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = 'user'
+
+    id = Column(Integer, primary_key=True)
+    username = Column(String, unique=True, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    password_hash = Column(String, nullable=False)
+    first_name = Column(String)
+    last_name = Column(String)
+    creator_id = Column(Integer, ForeignKey('creators.id'))
