@@ -1,23 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css';
 
 function App() {
-  const [data, setData] = useState("")
+  const [data, setData] = useState([{}])
 
   useEffect(() => {
-    fetch("/").then(
+    fetch("http://localhost:8080/").then(
       res => res.json()
     ).then(
-      data => {
-        setData(data)
-        console.log(data)
-      }
+      data => setData(data)
     )
   }, [])
+
   return (
     <div>
       <p>
-        {data}
+        {console.log(data)}
       </p>
     </div>
   );
