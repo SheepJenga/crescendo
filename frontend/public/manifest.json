@@ -1,14 +1,14 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Crescendo",
+  "name": "Crescendo App HackMIT",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "sheep_new.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "sheep_new.png",
       "type": "image/png",
       "sizes": "192x192"
     },
