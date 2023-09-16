@@ -1,8 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from base import Base
 
 class Relationship(Base):
     __tablename__ = 'relationship'
