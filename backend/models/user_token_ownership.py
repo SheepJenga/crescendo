@@ -12,3 +12,4 @@ class UserTokenOwnership(Base):
     def __init__(self, user_id, token_id):
         self.user_id = user_id
         self.token_id = token_id
+        
