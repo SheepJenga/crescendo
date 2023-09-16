@@ -86,9 +86,9 @@ def insert_data(db_name, user_name):
     conn.close()
 
 if __name__ == "__main__":
-    run_command("brew services start postgresql@16")
+#     run_command("brew services start postgresql@16")
     DB = 'TEST3'
-    USER = 'arnoldsu' # REPLACE THIS W YOUR DEFAULT PSQL USER NAME (it should be the string that appears when you type "psql" in terminal)
+    USER = 'shepardjiang' # REPLACE THIS W YOUR DEFAULT PSQL USER NAME (it should be the string that appears when you type "psql" in terminal)
     create_database(DB, USER)
     populate_database(DB, USER)
     insert_data(DB, USER)
