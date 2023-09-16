@@ -15,6 +15,7 @@ function App() {
   return (
     <div>
       <p>
+        {data.score}
         {console.log(data)}
       </p>
     </div>
