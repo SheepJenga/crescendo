@@ -3,6 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 function Header() {
     return (
         <div>
@@ -13,7 +14,7 @@ function Header() {
                     </img>
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <Nav>
                     <Bars />
                     <NavMenu>
@@ -25,7 +26,7 @@ function Header() {
                         </NavLink>
                     </NavMenu>
                 </Nav>
-            </div>
+            </div> */}
         </div>
     );
 }

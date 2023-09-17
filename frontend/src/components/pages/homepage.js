@@ -1,16 +1,20 @@
-import React from 'react'
+import React from 'react';
+import Feed from '../modules/Feed.js';
+import NavBar from '../modules/NavBar.js';
+import UserInfo from '../modules/UserInfo.js';
 
 const Home = () => {
     return (
       <div
         style={{
           display: 'flex',
-          justifyContent: 'Right',
-          alignItems: 'Right',
-          height: '100vh'
+          justifyContent: 'top',
+          alignItems: 'top',
         }}
       >
-        <h1>Crescendo</h1>
+        <NavBar/>
+        <Feed/>
+        <UserInfo/>
       </div>
     );
   };
