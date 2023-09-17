@@ -8,7 +8,7 @@ const UserInfo = (props) => {
         alignItems: 'top',
         height: '80vh',
         width: '25%',
-      }} class="mt-4">
+      }} class="mt-2">
         <div class="card m-3 p-3 w-100 rounded">
         <h1>
             User Information

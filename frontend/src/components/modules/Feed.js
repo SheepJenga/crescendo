@@ -4,9 +4,8 @@ import ActivityCard from './ActivityCard.js'
 const Feed = (props) => {
   return (
     <div style={{
-        height: '100vh',
-        width: '55%',
-      }}>
+        width: '55%'
+      }} class='mt-3'>
       <ActivityCard/>
       <ActivityCard/>
       <ActivityCard/>

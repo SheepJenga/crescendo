@@ -19,10 +19,10 @@ function App() {
 
   return (
     <div>
-    <Header />
     <BrowserRouter>
+      <div><Header /></div>
       <Routes>
-        <Route path="/" element={<Home/>}>
+        <Route path="/" element={<div class='App-body'><Home /></div>}>
           <Route index element={<Profile/>} />
           <Route path="profile" element={<Profile/>} />
           <Route path="*" element={<NotFound />} />
