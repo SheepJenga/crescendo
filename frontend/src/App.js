@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './/components/header.js';
+import Footer from './/components/footer.js';
 import Home from './components/pages/homepage.js';
 import Solana from './components/pages/solana.js';
 import Profile from './components/pages/Profile.js';
@@ -58,6 +59,7 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
+            <div><Footer/></div>
           </BrowserRouter>
           </div>
         </WalletModalProvider>

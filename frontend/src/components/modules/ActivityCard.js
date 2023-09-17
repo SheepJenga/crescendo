@@ -8,7 +8,9 @@ const ActivityCard = (props) => {
         {<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cotswold_Sheep_%28cropped%29.JPG/440px-Cotswold_Sheep_%28cropped%29.JPG" alt="" class="avator"></img>}
         <div class="tweet-header-info">
           shepard jiang <span>@sheepjenga</span><span> sep 16</span>
-            <iframe src="https://open.spotify.com/embed/track/7mFemsen8hkEoC5a4qeD6C?utm_source=generator" style={{ width: "100%", height: "200", frameBorder: "0", allowfullscreen: "", allow: "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture", loading: "lazy" }}></iframe>
+          <div class="song-wrapper">
+          <iframe src="https://open.spotify.com/embed/track/7mFemsen8hkEoC5a4qeD6C?utm_source=generator" style={{ width: "100%", height: "75", display: "flex", margin: "none", border:"none", frameBorder: "0", allowfullscreen: "", allow: "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture", loading: "lazy" }}></iframe>
+          </div>
           <div>
             <p>BaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaa</p>
           </div>
