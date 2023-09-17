@@ -10,12 +10,12 @@ const Transactions = (props) => {
         height: '69vh',
         width: '25%',
         fontFamily: "GameOver",
-        fill: "#000"
       }} class="mt-2">
-        <div class="card m-3 p-3 w-100 rounded">
-        <h1>
-            user info
-        </h1>
+        <div class="rounded p-3 w-100">
+        <div class="card rounded pt-2 w-100">        
+        <h1 class="title">
+            transactions
+        </h1></div>
         <TransactionCard/>
         <TransactionCard/>
         <TransactionCard/>
