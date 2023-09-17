@@ -10,7 +10,7 @@ const NavBar = (props) => {
         display: 'flex',
         justifyContent: 'top',
         alignItems: 'top',
-        height: '60vh',
+        height: '38vh',
         width: '20%',
         fontFamily: "GameOver",
         position: "sticky",
@@ -19,7 +19,7 @@ const NavBar = (props) => {
       }} class="mt-2">
     
     <div class="card m-3 p-3 w-100 rounded">
-        <h1 class="title">
+        <h1 class="sidebar-title">
             settings
         </h1>
         <a href="/">Home</a>

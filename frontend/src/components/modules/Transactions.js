@@ -7,16 +7,15 @@ const Transactions = (props) => {
         display: 'flex',
         justifyContent: 'top',
         alignItems: 'top',
-        height: '69vh',
-        width: '25%',
+        height: '60vh',
+        width: '23%',
         fontFamily: "GameOver",
-      }} class="mt-2">
+      }} class="p-2">
         <div class="rounded p-3 w-100">
-        <div class="card rounded pt-2 w-100">        
-        <h1 class="title">
+        <div class="card rounded p-2 w-100">        
+        <h1 class="sidebar-title">
             transactions
         </h1></div>
-        <TransactionCard/>
         <TransactionCard/>
         <TransactionCard/>
         <TransactionCard/>

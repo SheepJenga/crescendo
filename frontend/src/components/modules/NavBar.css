@@ -7,9 +7,10 @@
     font-size: 0.9rem;
   }
 
-  .title{
+  .sidebar-title{
     color: #fff;
     text-align: center;
+    font-size: 30px;
   }
 
   .card{
@@ -27,5 +28,6 @@
   
   a {
     text-decoration: none;
+    font-size: 24px;
   }
   
