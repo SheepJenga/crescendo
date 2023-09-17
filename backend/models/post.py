@@ -4,7 +4,7 @@ from .base import Base
 class Post(Base):
     __tablename__ = 'post'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     spotify_url = Column(String(500), nullable=False)
     content = Column(String(500), nullable=False)
     timestamp = Column(DateTime, nullable=False, default=func.now())

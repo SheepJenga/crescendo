@@ -5,7 +5,7 @@ from .base import Base
 class Relationship(Base):
     __tablename__ = 'relationship'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     follower_id = Column(Integer, ForeignKey('user.id'))
     following_id = Column(Integer, ForeignKey('user.id'))
 

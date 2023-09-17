@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './/components/header.js';
 import Home from './components/pages/homepage.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import Profile from './components/pages/Profile.js';
+import NotFound from './components/pages/NotFound.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState([{}])
@@ -18,13 +19,16 @@ function App() {
 
   return (
     <div>
-    <Router>
-      <Header />
-      <Home />
+    <BrowserRouter>
+      <div><Header /></div>
       <Routes>
-        <Route path='/' exact component={Home} />
+        <Route path="/" element={<div class='App-body'><Home /></div>}>
+          <Route index element={<Profile/>} />
+          <Route path="profile" element={<Profile/>} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
     </div>
     
   );

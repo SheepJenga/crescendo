@@ -10,16 +10,16 @@ body {
   .avator {
     border-radius:100px;
     width:48px;
-    margin-right: 15px;
+    margin-right:30px;
   }
   
   .tweet-wrap {
     max-width:100%;
     background: #fff;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 5px;
     border-radius:12px;
-    padding: 30px;
+    padding: 20px;
     border-bottom: 1px solid #e6ecf0;
     border-top: 1px solid #e6ecf0;
   }
@@ -31,17 +31,20 @@ body {
   }
   .tweet-header-info {
     font-weight:bold;
+    overflow: hidden;
   }
   .tweet-header-info span {
     color:#657786;
     font-weight:normal;
-    margin-left: 5px;
+    margin-left: 20px;
   }
   .tweet-header-info p {
-    font-weight:normal;
+    font-weight: normal;
     margin-top: 5px;
-    
+    margin-right: 20px;
+    overflow-wrap:break-word;
   }
+
   .tweet-img-wrap {
     padding-left: 60px;
   }
@@ -53,7 +56,7 @@ body {
   }
   .tweet-info-counts div {
     display: flex;
-    margin-right: 20px;
+    margin-right: 30px;
   }
   .tweet-info-counts div svg {
     color:#657786;

@@ -9,7 +9,7 @@ const NavBar = (props) => {
         alignItems: 'top',
         height: '60vh',
         width: '20%',
-      }} class="mt-4">
+      }} class="mt-2">
     
     <div class="card m-3 p-3 w-100 rounded">
         <h1>
@@ -17,7 +17,7 @@ const NavBar = (props) => {
         </h1>
         <a href="/">Home</a>
         <a href="/profile">Profile</a>
-        <a href="">Link 3</a>
+        <a href=""></a>
         <a href="#">Link 4</a>
         <a href="#">Link 5</a>
     </div>
