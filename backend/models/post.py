@@ -8,7 +8,7 @@ class Post(Base):
     spotify_url = Column(String(500), nullable=False)
     content = Column(String(500), nullable=False)
     timestamp = Column(DateTime, nullable=False, default=func.now())
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('account.id'))
 
     def __init__(self, spotify_url, content, user_id):
         self.spotify_url = spotify_url

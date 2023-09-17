@@ -2,8 +2,8 @@ from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, func
 from sqlalchemy.orm import relationship
 from .base import Base
 
-class User(Base):
-    __tablename__ = 'user'
+class Account(Base):
+    __tablename__ = 'account'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String, unique=True, nullable=False)

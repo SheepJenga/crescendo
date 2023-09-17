@@ -1,5 +1,8 @@
 import React from 'react';
-import "./NavBar.css"
+import GoogleLogin, { GoogleLogout } from "react-google-login";
+import { Link } from "react-router-dom";
+
+import "./NavBar.css";
 
 const NavBar = (props) => {
   return (
@@ -9,11 +12,12 @@ const NavBar = (props) => {
         alignItems: 'top',
         height: '60vh',
         width: '20%',
+        fontFamily: "GameOver"
       }} class="mt-2">
     
     <div class="card m-3 p-3 w-100 rounded">
         <h1>
-            Settings
+            settings
         </h1>
         <a href="/">Home</a>
         <a href="/profile">Profile</a>
@@ -21,7 +25,6 @@ const NavBar = (props) => {
         <a href="#">Link 4</a>
         <a href="#">Link 5</a>
     </div>
-      
     </div>
   )
 }

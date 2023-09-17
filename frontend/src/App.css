@@ -1,3 +1,8 @@
+@font-face {
+  font-family: GameOver;
+  src: url('game over.ttf');
+}
+
 .App {
   text-align: center;
 }
@@ -8,7 +13,6 @@
 }
 
 .logo {
-  display: flex;
   height: 10vmin;
 }
 
@@ -19,6 +23,8 @@
 }
 
 .App-header {
+  font-family: "GameOver";
+  font-size:100px;
   background-color: #000000;
   min-height: 7vh;
   width: 100vw;
@@ -26,18 +32,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   position: fixed;
-  padding-top: 5px;
+  padding-top: 8vh;
   height: 18vh;
   transition: height 0.2s;
   z-index: 1000;
 }
 
 .header-scrolled {
-  padding-top: 5px;
+  padding-top: 2vh;
   height: 7vh;
+  font-size: 30px;
 }
 
 .App-body{

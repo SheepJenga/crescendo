@@ -5,6 +5,7 @@ import Home from './components/pages/homepage.js';
 import Solana from './components/pages/solana.js';
 import Profile from './components/pages/Profile.js';
 import NotFound from './components/pages/NotFound.js';
+import NFTDescription from './components/pages/NFTDescription.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";

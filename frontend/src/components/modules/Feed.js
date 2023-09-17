@@ -10,6 +10,7 @@ const Feed = (props) => {
       <ActivityCard/>
       <ActivityCard/>
       <ActivityCard/>
+      <ActivityCard/>
     </div>
   )
 }

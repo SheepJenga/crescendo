@@ -6,8 +6,8 @@ class Relationship(Base):
     __tablename__ = 'relationship'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    follower_id = Column(Integer, ForeignKey('user.id'))
-    following_id = Column(Integer, ForeignKey('user.id'))
+    follower_id = Column(Integer, ForeignKey('account.id'))
+    following_id = Column(Integer, ForeignKey('account.id'))
 
     def __init__(self, follower_id, following_id):
         self.follower_id = follower_id

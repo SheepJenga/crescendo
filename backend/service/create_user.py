@@ -1,7 +1,6 @@
-from ..models.user import User
+from backend.models.account import Account
 
 def create_user(clients, first_name, last_name, email, username):
     db = clients.db_client
-    user = User(first_name, last_name, email, username)
-    return db.create(user)
-    
+    account = Account(first_name, last_name, email, username)
+    return db.create(account)
