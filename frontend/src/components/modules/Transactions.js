@@ -7,12 +7,14 @@ const Transactions = (props) => {
         display: 'flex',
         justifyContent: 'top',
         alignItems: 'top',
-        height: '80vh',
+        height: '69vh',
         width: '25%',
+        fontFamily: "GameOver",
+        fill: "#000"
       }} class="mt-2">
         <div class="card m-3 p-3 w-100 rounded">
         <h1>
-            Recent Transactions
+            user info
         </h1>
         <TransactionCard/>
         <TransactionCard/>

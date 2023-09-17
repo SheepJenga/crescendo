@@ -19,12 +19,12 @@ const handleScroll = () => {
     return (
         <div>
             <div class={`App-header ${isScrolled && 'header-scrolled'}`}>
-                <h1>Crescendo</h1>
-                <div class="App-logo">
+                <p>crescendo</p>
+                {/* <div class="App-logo">
                   {!isScrolled && (
                     <img src="./sheep_new.png" alt="Crescendo Sheep Logo" class="logo"/>
                   )}
-                </div>
+                </div> */}
             </div>
         </div>
     );

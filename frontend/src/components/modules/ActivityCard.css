@@ -1,8 +1,6 @@
 body {
-    background: #e6ecf0;
-    font-family: 'Asap', sans-serif;
-    font-family: 'Roboto', sans-serif;
-  
+    background: "#8E05C2";
+    font-family: 'Verdana', sans-serif;
   }
   img {
     max-width:100%;
@@ -15,13 +13,13 @@ body {
   
   .tweet-wrap {
     max-width:100%;
-    background: #fff;
+    background: #000;
+    opacity: 85%;
     margin: 0 auto;
-    margin-top: 5px;
     border-radius:12px;
     padding: 20px;
-    border-bottom: 1px solid #e6ecf0;
-    border-top: 1px solid #e6ecf0;
+    border-bottom: 1px solid #3E065F;
+    border-top: 1px solid #3E065F;
   }
   
   .tweet-header {
@@ -31,14 +29,17 @@ body {
   }
   .tweet-header-info {
     font-weight:bold;
+    font-family:"GameOver";
+    color: #fff;
     overflow: hidden;
   }
   .tweet-header-info span {
-    color:#657786;
+    color:#fff;
     font-weight:normal;
     margin-left: 20px;
   }
   .tweet-header-info p {
+    font-family: 'Verdana', sans-serif;
     font-weight: normal;
     margin-top: 5px;
     margin-right: 20px;
@@ -50,16 +51,18 @@ body {
   }
   
   .tweet-info-counts {
+    font-family:"GameOver";
     display: flex;
-    margin-left: 60px;
+    color: #fff;
+    margin-left: 80px;
     margin-top: 10px;
   }
   .tweet-info-counts div {
     display: flex;
-    margin-right: 30px;
+    margin-right: 6vw;
   }
   .tweet-info-counts div svg {
-    color:#657786;
+    color:#fff;
     margin-right: 10px;
   }
   @media screen and (max-width:430px){

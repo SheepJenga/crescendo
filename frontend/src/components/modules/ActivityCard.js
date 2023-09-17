@@ -7,7 +7,7 @@ const ActivityCard = (props) => {
   <div class="tweet-header">
     {<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cotswold_Sheep_%28cropped%29.JPG/440px-Cotswold_Sheep_%28cropped%29.JPG" alt="" class="avator"></img>}
     <div class="tweet-header-info">
-      Shepard Jiang <span>@SheepJenga</span><span> Sep 16</span>
+      shepard jiang <span>@sheepjenga</span><span> sep 16</span>
     <div>
         <audio src="https://learn.shayhowe.com.s3-website-us-east-1.amazonaws.com/assets/misc/courses/html-css/adding-media/jazz.ogg" controls></audio>
     </div>

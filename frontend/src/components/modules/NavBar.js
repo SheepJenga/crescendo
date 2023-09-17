@@ -12,11 +12,12 @@ const NavBar = (props) => {
         alignItems: 'top',
         height: '60vh',
         width: '20%',
+        fontFamily: "GameOver"
       }} class="mt-2">
     
     <div class="card m-3 p-3 w-100 rounded">
         <h1>
-            Settings
+            settings
         </h1>
         <a href="/">Home</a>
         <a href="/profile">Profile</a>
