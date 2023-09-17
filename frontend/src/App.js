@@ -55,12 +55,12 @@ function App() {
           <BrowserRouter>
             <div><Header /></div>
             <Routes>
-              <Route path="/" element={<div class='App-body'><Login setUser={setUserJSON}/></div>}>
+              <Route path="/" element={<div class='login-body'><Login setUser={setUserJSON}/></div>}>
+                </Route>
                 {/* <Route index element={<Home/>} /> */}
-                <Route path="home" element={<Home/>} />
-                <Route path="profile" element={<Profile/>} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
+                <Route path="/home" element={<div class='App-body'><Home/></div>} />
+                <Route path="/profile" element={<div class='App-body'><Profile/></div>} />
+                <Route path="/*" element={<div class='login-body'><NotFound /></div>} />
             </Routes>
             <div><Footer/></div>
           </BrowserRouter>

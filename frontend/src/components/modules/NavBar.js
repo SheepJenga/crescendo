@@ -22,9 +22,8 @@ const NavBar = (props) => {
         <h1 class="sidebar-title">
             settings
         </h1>
-        <a href="/">Home</a>
+        <a href="/">Login</a>
         <a href="/profile">Profile</a>
-        <a href=""></a>
         <a href="#">Link 4</a>
         <a href="#">Link 5</a>
     </div>
