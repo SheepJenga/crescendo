@@ -31,6 +31,7 @@ body {
     display: flex;
     align-items:flex-start;
     font-size:14px;
+    user-select: none;
   }
   .tweet-header-info {
     font-weight:bold;
@@ -49,6 +50,7 @@ body {
     margin-top: 5px;
     margin-right: 20px;
     overflow-wrap:break-word;
+    user-select: text;
   }
 
   .tweet-img-wrap {
@@ -61,6 +63,7 @@ body {
     color: #fff;
     margin-left: 80px;
     margin-top: 10px;
+    user-select: none;
   }
   .tweet-info-counts div {
     display: flex;
