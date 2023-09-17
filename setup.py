@@ -41,7 +41,7 @@ def build_tables(db_name, user_name):
             password='')
 
     engine = create_engine(f'postgresql://{user_name}@localhost/crescendo')
-    
+    Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
 
     conn.close()

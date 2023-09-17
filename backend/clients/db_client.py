@@ -18,7 +18,7 @@ class Datastore:
         session = scoped_session(sessionmaker(bind=self._engine))
 
         query = session.query(model)
-        for attr, value in conds.iteritems():
+        for attr, value in conds.items():
             query = query.filter(getattr(model, attr) == value)
 
         return query.first()
@@ -27,7 +27,7 @@ class Datastore:
         session = scoped_session(sessionmaker(bind=self._engine))
 
         query = session.query(model)
-        for attr, value in conds.iteritems():
+        for attr, value in conds.items():
             query = query.filter(getattr(model, attr) == value)
 
         if limit == -1:
@@ -38,8 +38,8 @@ class Datastore:
     def create(self, model):
         m = model
 
-        prev = self.get_first(m)
-        if not prev:
+        prev = self.get_first(m.__class__)
+        if prev:
             return prev.id
 
         session = scoped_session(sessionmaker(bind=self._engine))

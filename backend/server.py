@@ -14,6 +14,7 @@ import google
 import google.oauth2.id_token as id_token
 
 from clients import crescendo_clients
+from service.create_user import create_user
 
 
 app = Flask(__name__)
@@ -39,6 +40,7 @@ def login_is_required(function):
 
 @app.route("/", methods=["GET"])
 def index():
+    create_user(crescendo_clients, "test", "test", "test@gmail.com", "test")
     return "Hello World <a href='/login'> <button>Login</button> </a>"
 
 @app.route("/testing")
@@ -87,4 +89,4 @@ def protected_area():
     return "Protected! <a href='/logout'> <button>Logout</button> </a>"
 
 if __name__ == "__main__":
-    app.run(port=8080)
+    app.run(port=8080, debug=True)
