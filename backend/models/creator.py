@@ -8,4 +8,4 @@ class Creator(Base):
     id = Column(Integer, primary_key=True)
 
     def __init__(self):
-        pass
+        return
