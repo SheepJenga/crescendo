@@ -1,4 +1,4 @@
-import idl from "../pages/api/idl/solana_hello_world.json";
+import idl from "../api/idl/solana_hello_world.json";
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 
 /* Constants for RPC Connection the Solana Blockchain */
@@ -8,5 +8,8 @@ export const endpoint =
 export const connection = new Connection(endpoint, commitmentLevel);
 
 /* Constants for the Deployed "Hello World" Program */
-// export const helloWorldprogramId = new PublicKey(idl.metadata.address);
-// export const helloWorldprogramInterface = JSON.parse(JSON.stringify(idl));
+console.log('IDL ', idl)
+console.log('META DATA ', idl.metadata)
+console.log('ADDRESS ', idl.metadata.address)
+export const helloWorldprogramId = new PublicKey(idl.metadata.address);
+export const helloWorldprogramInterface = JSON.parse(JSON.stringify(idl));

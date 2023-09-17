@@ -14,7 +14,7 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import { endpoint } from "./components/utils/constants";
+import { endpoint } from "./components/pages/utils/constants";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 function App() {
