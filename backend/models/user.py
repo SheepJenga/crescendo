@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from base import Base
+from .base import Base
 
 class User(Base):
     __tablename__ = 'user'
@@ -11,7 +11,7 @@ class User(Base):
     password_hash = Column(String, nullable=False)
     first_name = Column(String)
     last_name = Column(String)
-    creator_id = Column(Integer, ForeignKey('creators.id'))
+    creator_id = Column(Integer, ForeignKey('creator.id'))
 
     def __init__(self, username, email, password_hash, first_name, last_name, creator_id):
         self.username = username

@@ -1,6 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.orm import relationship
-from base import Base
+from sqlalchemy import Column, Integer
+from .base import Base
 
 class Creator(Base):
     __tablename__ = 'creator'

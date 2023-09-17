@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 import psycopg2
 import os
-from ..models.base import Base
+import backend.models
 
 def initDB():
     conn = psycopg2.connect(
@@ -12,7 +12,7 @@ def initDB():
     )
 
     engine = create_engine('postgresql+psycopg2://scott:tiger@localhost/test')
-    
-    Base.metadata.create_all(engine)
+
+    backend.models.Base.metadata.create_all(engine)
 
     

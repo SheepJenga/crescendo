@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-from base import Base
+from .base import Base
 
 class Token(Base):
     __tablename__ = 'token'
@@ -10,7 +10,7 @@ class Token(Base):
     supply = Column(Integer)
     minted_date = Column(DateTime)
     amount_minted = Column(Integer)
-    creator_id = Column(Integer, ForeignKey('creators.id'))
+    creator_id = Column(Integer, ForeignKey('creator.id'))
 
     def __init__(self, name, supply, minted_date, creator_id):
         self.name = name

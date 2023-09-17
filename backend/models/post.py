@@ -1,7 +1,5 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, func
-from sqlalchemy.orm import relationship
-import datetime
-from base import Base
+from .base import Base
 
 class Post(Base):
     __tablename__ = 'post'
