@@ -14,19 +14,6 @@ function Header() {
                     </img>
                 </div>
             </div>
-            {/* <div>
-                <Nav>
-                    <Bars />
-                    <NavMenu>
-                        <NavLink to='/' activeStyle>
-                            Home
-                        </NavLink>
-                        <NavLink to='/feed' activeStyle>
-                            Feed
-                        </NavLink>
-                    </NavMenu>
-                </Nav>
-            </div> */}
         </div>
     );
 }

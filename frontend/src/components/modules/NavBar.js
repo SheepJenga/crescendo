@@ -17,7 +17,7 @@ const NavBar = (props) => {
         </h1>
         <a href="/">Home</a>
         <a href="/profile">Profile</a>
-        <a href="">Link 3</a>
+        <a href=""></a>
         <a href="#">Link 4</a>
         <a href="#">Link 5</a>
     </div>
