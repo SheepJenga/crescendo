@@ -12,3 +12,11 @@ class User(Base):
     first_name = Column(String)
     last_name = Column(String)
     creator_id = Column(Integer, ForeignKey('creators.id'))
+
+    def __init__(self, username, email, password_hash, first_name, last_name, creator_id):
+        self.username = username
+        self.email = email
+        self.password_hash = password_hash
+        self.first_name = first_name
+        self.last_name = last_name
+        self.creator_id = creator_id

@@ -11,3 +11,10 @@ class Token(Base):
     minted_date = Column(DateTime)
     amount_minted = Column(Integer)
     creator_id = Column(Integer, ForeignKey('creators.id'))
+
+    def __init__(self, name, supply, minted_date, creator_id):
+        self.name = name
+        self.supply = supply
+        self.minted_date = minted_date
+        self.amount_minted = 0
+        self.creator_id = creator_id
