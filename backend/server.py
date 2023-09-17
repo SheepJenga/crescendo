@@ -2,7 +2,7 @@
 import dotenv
 dotenv.load_dotenv()
 
-from flask import Flask, render_template, session, abort, redirect, request, session
+from flask import Flask, render_template, session, abort, redirect, request
 from flask_cors import CORS
 from google_auth_oauthlib.flow import Flow
 
@@ -43,14 +43,11 @@ def index():
     create_user(crescendo_clients, "test", "test", "test@gmail.com", "test")
     return "Hello World <a href='/login'> <button>Login</button> </a>"
 
-@app.route("/testing")
-def test():
-    return {'testing': 123}
-
 @app.route("/login")
 def login():
     authorization_url, state = flow.authorization_url()
     session["state"] = state
+    print(state)
     return redirect(authorization_url)
 
 @app.route("/logout")
@@ -69,6 +66,7 @@ def callback():
     request_session = requests.session()
     cached_session = cachecontrol.CacheControl(request_session)
     token_request = google.auth.transport.requests.Request(session=cached_session)
+    print(credentials)
 
     id_info = id_token.verify_oauth2_token(
         id_token=credentials._id_token,
