@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Keypair } from "@solana/web3.js";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import createMessage from "./api/createMessage.ts";
+import updateMessage from "./api/updateMessage.ts";
 
 const Solana = () => {
     const [messageAccount, _] = useState(Keypair.generate());
@@ -31,34 +32,37 @@ const Solana = () => {
                 </h1>
 
                 {wallet && (
-                    <div className={styles.message_bar}>
-                        <input
-                        className={styles.message_input}
-                        placeholder="Write Your Message!"
-                        onChange={(e) => setInputtedMessage(e.target.value)}
-                        value={inputtedMessage}
-                        />
-                        <button
-                        className={styles.message_button}
-                        disabled={!inputtedMessage}
-                        onClick={async () => {
-                            const message = await createMessage(
+                <div className={styles.message_bar}>
+                    <input
+                    className={styles.message_input}
+                    placeholder="Write Your Message!"
+                    onChange={(e) => setInputtedMessage(e.target.value)}
+                    value={inputtedMessage}
+                    />
+                    <button
+                    className={styles.message_button}
+                    disabled={!inputtedMessage}
+                    onClick={async () => {
+                        const deployedMessage = message
+                        ? await updateMessage(inputtedMessage, wallet, messageAccount)
+                        : await createMessage(
                             inputtedMessage,
                             wallet,
                             messageAccount
                             );
-                            if (message) {
-                            setMessage(message.content.toString());
-                            setMessageAuthor(message.author.toString());
-                            setMessageTime(message.timestamp.toNumber() * 1000);
-                            setInputtedMessage("");
-                            }
-                        }}
-                        >
-                        Create a Message!
-                        </button>
-                    </div>
-                    )}
+
+                        if (deployedMessage) {
+                        setMessage(deployedMessage.content.toString());
+                        setMessageAuthor(deployedMessage.author.toString());
+                        setMessageTime(deployedMessage.timestamp.toNumber() * 1000);
+                        setInputtedMessage("");
+                        }
+                    }}
+                    >
+                    {message ? "Update the Message!" : "Create a Message!"}
+                    </button>
+                </div>
+                )}
 
                 {wallet && message && (
                 <div className={styles.card}>
@@ -70,7 +74,7 @@ const Solana = () => {
                     </h2>
                     <h2>Time Published: {new Date(messageTime).toLocaleString()}</h2>
                 </div>
-                )}                    
+                )}
 
             </div>
         </div>
