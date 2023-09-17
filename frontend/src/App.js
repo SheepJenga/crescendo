@@ -4,6 +4,7 @@ import Header from './/components/header.js';
 import Home from './components/pages/homepage.js';
 import Profile from './components/pages/Profile.js';
 import NotFound from './components/pages/NotFound.js';
+import NFTDescription from './components/pages/NFTDescription.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

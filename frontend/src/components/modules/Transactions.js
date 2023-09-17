@@ -1,6 +1,7 @@
 import React from 'react';
+import TransactionCard from './TransactionCard';
 
-const UserInfo = (props) => {
+const Transactions = (props) => {
   return (
     <div style={{
         display: 'flex',
@@ -11,16 +12,16 @@ const UserInfo = (props) => {
       }} class="mt-2">
         <div class="card m-3 p-3 w-100 rounded">
         <h1>
-            User Information
+            Recent Transactions
         </h1>
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
-        <a href="#">Link 5</a>
+        <TransactionCard/>
+        <TransactionCard/>
+        <TransactionCard/>
+        <TransactionCard/>
+        <TransactionCard/>
     </div>
     </div>
   )
 }
 
-export default UserInfo
+export default Transactions

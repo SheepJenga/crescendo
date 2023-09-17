@@ -1,7 +1,7 @@
 import React from 'react';
 import Feed from '../modules/Feed.js';
 import NavBar from '../modules/NavBar.js';
-import UserInfo from '../modules/UserInfo.js';
+import Transactions from '../modules/Transactions.js';
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
       >
         <NavBar/>
         <Feed/>
-        <UserInfo/>
+        <Transactions/>
       </div>
     );
   };

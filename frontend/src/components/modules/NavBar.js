@@ -1,5 +1,8 @@
 import React from 'react';
-import "./NavBar.css"
+import GoogleLogin, { GoogleLogout } from "react-google-login";
+import { Link } from "react-router-dom";
+
+import "./NavBar.css";
 
 const NavBar = (props) => {
   return (
@@ -21,7 +24,6 @@ const NavBar = (props) => {
         <a href="#">Link 4</a>
         <a href="#">Link 5</a>
     </div>
-      
     </div>
   )
 }
