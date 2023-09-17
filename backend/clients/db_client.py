@@ -4,10 +4,10 @@ import os
 
 class Datastore:
     def __init__(self):
-        host=os.environ['DB_HOST']
-        database=os.environ['DB_NAME']
-        username=os.environ['DB_USERNAME']
-        password=os.environ['DB_PASSWORD']
+        host=os.getenv('DB_HOST')
+        database=os.getenv('DB_NAME')
+        username=os.getenv('DB_USERNAME')
+        password=os.getenv('DB_PASSWORD')
 
         self._engine = create_engine(f'postgresql://{username}{(":" + password) if password else password }@{host}/{database}')
     
