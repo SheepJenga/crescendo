@@ -43,51 +43,65 @@ def login_is_required(function):
 def index():
     return "Hello World <a href='/login'> <button>Login</button> </a>"
 
-@app.route("/login")
-def login():
-    authorization_url, state = flow.authorization_url()
-    session["state"] = state
+# @app.route("/login")
+# def login():
+#     authorization_url, state = flow.authorization_url()
+#     session["state"] = state
 
-    return redirect(authorization_url)
+#     return redirect(authorization_url)
 
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect("/")
+# @app.route("/logout")
+# def logout():
+#     session.clear()
+#     return redirect("/")
 
-@app.route("/callback")
-def callback():
-    flow.fetch_token(authorization_response=request.url)
+# @app.route("/callback")
+# def callback():
+#     flow.fetch_token(authorization_response=request.url)
 
-    if not session["state"] == request.args["state"]:
-        abort(500) # States doesn't match
+#     if not session["state"] == request.args["state"]:
+#         abort(500) # States doesn't match
 
-    credentials = flow.credentials
-    request_session = requests.session()
-    cached_session = cachecontrol.CacheControl(request_session)
-    token_request = google.auth.transport.requests.Request(session=cached_session)
+#     credentials = flow.credentials
+#     request_session = requests.session()
+#     cached_session = cachecontrol.CacheControl(request_session)
+#     token_request = google.auth.transport.requests.Request(session=cached_session)
 
-    id_info = id_token.verify_oauth2_token(
-        id_token=credentials._id_token,
-        request=token_request,
-        audience=os.environ["GOOGLE_CLIENT_ID"],
-        clock_skew_in_seconds=10
-    )
+#     id_info = id_token.verify_oauth2_token(
+#         id_token=credentials._id_token,
+#         request=token_request,
+#         audience=os.environ["GOOGLE_CLIENT_ID"],
+#         clock_skew_in_seconds=10
+#     )
 
-    session["google_id"] = id_info.get("sub")
-    session["name"] = id_info.get("name")
-    session["first_name"] = id_info.get("given_name")
-    session["last_name"] = id_info.get("family_name")
-    session["email"] = id_info.get("email")
-    session["profile_picture"] = id_info.get("picture")
+#     session["google_id"] = id_info.get("sub")
+#     session["name"] = id_info.get("name")
+#     session["first_name"] = id_info.get("given_name")
+#     session["last_name"] = id_info.get("family_name")
+#     session["email"] = id_info.get("email")
+#     session["profile_picture"] = id_info.get("picture")
 
-    return redirect("/finish_login")
+#     return redirect("/finish_login")
 
 
-@app.route("/finish_login")
+@app.route("/login/<string:email>")
 @login_is_required
 def finish_login():
     user = create_user(crescendo_clients, session["first_name"], session["last_name"], session["email"], session["name"], session["profile_picture"])
+    return jsonify({
+        "id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "first_name": user.first_name,
+        "last_name": user.last_name,
+        "profile_picture": user.profile_picture,
+        "creator_id": user.creator_id,
+    })
+
+@login_is_required
+@app.route("/api/user/<int:user_id>")
+def get_user(user_id):
+    user = crescendo_clients.db_client.get_first(models.Account, conds={"id": user_id})
     return jsonify({
         "id": user.id,
         "username": user.username,

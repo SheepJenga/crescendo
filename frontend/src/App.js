@@ -3,6 +3,7 @@ import './App.css';
 import Header from './/components/header.js';
 import Footer from './/components/footer.js';
 import Home from './components/pages/homepage.js';
+import Login from './components/pages/Login.js';
 import Solana from './components/pages/solana.js';
 import Profile from './components/pages/Profile.js';
 import NotFound from './components/pages/NotFound.js';
@@ -20,6 +21,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 
 function App() {
   const [data, setData] = useState([{}])
+  const [userJSON, setUserJSON] = useState(undefined)
 
   useEffect(() => {
     fetch("http://localhost:8080/").then(
@@ -53,9 +55,12 @@ function App() {
           <BrowserRouter>
             <div><Header /></div>
             <Routes>
-              <Route path="/" element={<div class='App-body'><Home /></div>} />
-                <Route path="profile" element={<div class='App-body'><Profile /></div>} />
-                <Route path="*" element={<div class='App-body'><NotFound /></div>} />
+              <Route path="/" element={<div class='App-body'><Login setUser={setUserJSON}/></div>}>
+                {/* <Route index element={<Home/>} /> */}
+                <Route path="home" element={<Home/>} />
+                <Route path="profile" element={<Profile/>} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
             </Routes>
             <div><Footer/></div>
           </BrowserRouter>
