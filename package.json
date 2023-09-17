@@ -3,6 +3,7 @@
     "@solana/wallet-adapter-phantom": "^0.9.24",
     "@solana/wallet-adapter-react-ui": "^0.9.34",
     "jsrsasign": "^10.8.6",
+    "react-router-dom": "^6.16.0",
     "solana": "^1.0.7-development"
   }
 }
