@@ -50,7 +50,7 @@ def build_tables(db_name, user_name):
 if __name__ == "__main__":
 #     run_command("brew services start postgresql@16")
     DB = 'crescendo'
-    USER = 'tobe' # REPLACE THIS W YOUR DEFAULT PSQL USER NAME (it should be the string that appears when you type "psql" in terminal)
+    USER = 'shepardjiang' # REPLACE THIS W YOUR DEFAULT PSQL USER NAME (it should be the string that appears when you type "psql" in terminal)
     try:
         create_database(DB, USER)
     except:

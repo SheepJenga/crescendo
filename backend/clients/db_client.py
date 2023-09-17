@@ -21,7 +21,9 @@ class Datastore:
         for attr, value in conds.items():
             query = query.filter(getattr(model, attr) == value)
 
-        return query.first()
+        res = query.first()
+
+        return res
 
     def get_with_limit(self, model, limit=-1, conds={}):
         session = scoped_session(sessionmaker(bind=self._engine))
@@ -32,32 +34,33 @@ class Datastore:
 
         if limit == -1:
             return query.all()
-        
+
         return query.limit(limit).all()
     
-    def create(self, model):
+    def create(self, model, conds={}):
         m = model
 
-        prev = self.get_first(m.__class__)
+        prev = self.get_first(m.__class__, conds)
         if prev:
-            return prev.id
+            return prev
 
-        session = scoped_session(sessionmaker(bind=self._engine))
+        session = scoped_session(sessionmaker(bind=self._engine, expire_on_commit=False))
 
         session.add(m)
         session.commit()
 
-        return m.id
+        return m
     
     def update(self, model, conds={}, fields_to_update={}):
         m = model
-        session = scoped_session(sessionmaker(bind=self._engine))
+        session = scoped_session(sessionmaker(bind=self._engine, expire_on_commit=False))
 
         query = session.query(m)
         for attr, value in conds.iteritems():
             query = query.filter(getattr(m, attr) == value)
 
         query.update(fields_to_update)
+        session.expunge_all()
         session.commit()
         
-        return m.id
+        return m
