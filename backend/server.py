@@ -8,6 +8,9 @@ import pathlib
 import requests
 import google
 import google.oauth2.id_token as id_token
+import dotenv
+
+dotenv.load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = "Test-secret-key"
@@ -15,7 +18,6 @@ CORS(app) # This will enable CORS for all routes
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
-GOOGLE_CLIENT_ID = "751367345812-ba8g7na7feqt60h1tfg56bv932hcil00.apps.googleusercontent.com"
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
 
 flow = Flow.from_client_secrets_file(client_secrets_file=client_secrets_file,
@@ -65,7 +67,7 @@ def callback():
     id_info = id_token.verify_oauth2_token(
         id_token=credentials._id_token,
         request=token_request,
-        audience=GOOGLE_CLIENT_ID,
+        audience=os.environ["GOOGLE_CLIENT_ID"],
         clock_skew_in_seconds=10
     )
 

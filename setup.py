@@ -9,12 +9,13 @@ from psycopg2 import sql
 from backend.models.base import Base
 
 # imports to ensure all models are loaded
-from backend.models.creator import Creator
-from backend.models.user import User
-from backend.models.post import Post
-from backend.models.user_token_ownership import UserTokenOwnership
-from backend.models.token import Token
-from backend.models.relationship import Relationship
+# from backend.models.creator import Creator
+# from backend.models.user import User
+# from backend.models.post import Post
+# from backend.models.user_token_ownership import UserTokenOwnership
+# from backend.models.token import Token
+# from backend.models.relationship import Relationship
+import backend.models
 
 def run_command(command):
     code = os.system(command)
