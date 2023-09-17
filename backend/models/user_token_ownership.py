@@ -5,7 +5,7 @@ from .base import Base
 class UserTokenOwnership(Base):
     __tablename__ = 'user_token_ownership'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('user.id'))
     token_id = Column(Integer, ForeignKey('user.id'))
 

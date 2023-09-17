@@ -5,7 +5,7 @@ from .base import Base
 class Token(Base):
     __tablename__ = 'token'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String)
     supply = Column(Integer)
     amount_minted = Column(Integer)
