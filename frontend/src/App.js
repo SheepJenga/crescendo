@@ -53,11 +53,9 @@ function App() {
           <BrowserRouter>
             <div><Header /></div>
             <Routes>
-              <Route path="/" element={<div class='App-body'><Home /></div>}>
-                <Route index element={<Profile/>} />
-                <Route path="profile" element={<Profile/>} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
+              <Route path="/" element={<div class='App-body'><Home /></div>} />
+                <Route path="profile" element={<div class='App-body'><Profile /></div>} />
+                <Route path="*" element={<div class='App-body'><NotFound /></div>} />
             </Routes>
             <div><Footer/></div>
           </BrowserRouter>

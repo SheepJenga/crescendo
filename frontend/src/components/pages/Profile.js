@@ -10,7 +10,7 @@ const Profile = (props) => {
         width: '100%',
       }} class="mt-4">
     
-    <section className="h-100 gradient-custom-2">
+    <section className="h-100 w-100">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-lg-9 col-xl-7">
@@ -52,7 +52,7 @@ const Profile = (props) => {
                   </div>
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <p className="lead fw-normal mb-0">Recent photos</p>
-                    <p className="mb-0"><a href="#!" className="text-muted">Show all</a></p>
+                    <p className="mb-0"><a href="#!" className="text-white">Recent NFTs</a></p>
                   </div>
                   <div className="row g-2">
                     <div className="col mb-2">
