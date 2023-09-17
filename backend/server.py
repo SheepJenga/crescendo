@@ -1,3 +1,7 @@
+# load env vars
+import dotenv
+dotenv.load_dotenv()
+
 from flask import Flask, render_template, session, abort, redirect, request, session
 from flask_cors import CORS
 from google_auth_oauthlib.flow import Flow
@@ -8,11 +12,9 @@ import pathlib
 import requests
 import google
 import google.oauth2.id_token as id_token
-import dotenv
 
-from clients import crescendoClients
+from clients import crescendo_clients
 
-dotenv.load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = "Test-secret-key"
