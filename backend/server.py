@@ -10,6 +10,8 @@ import google
 import google.oauth2.id_token as id_token
 import dotenv
 
+from clients import crescendoClients
+
 dotenv.load_dotenv()
 
 app = Flask(__name__)

@@ -1,7 +1,5 @@
 class Clients:
-    def __init__(self, db):
-        self.db_client = db
-
-def newClients():
-    
+    def __init__(self, db_client, spotify_client):
+        self.db_client = db_client
+        self.spotify_client = spotify_client
     
