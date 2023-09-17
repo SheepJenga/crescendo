@@ -13,7 +13,7 @@ const TransactionCard = (props) => {
         backgroundColor: "#000",
         borderBottom: "1px solid #3E065F",
         borderTop: "1px solid #3E065F"
-      }} class="card p-3">
+      }} class="card p-1">
 
     <div class="card-body">
         <h5 class="card-title">Sep 17, 2023 3:08 AM</h5>
