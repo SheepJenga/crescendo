@@ -9,7 +9,8 @@ const ActivityCard = (props) => {
     <div class="tweet-header-info">
       shepard jiang <span>@sheepjenga</span><span> sep 16</span>
     <div>
-        <audio src="https://learn.shayhowe.com.s3-website-us-east-1.amazonaws.com/assets/misc/courses/html-css/adding-media/jazz.ogg" controls></audio>
+      <iframe src="https://open.spotify.com/embed/track/7mFemsen8hkEoC5a4qeD6C?utm_source=generator" style={{border_radius:"12px", width:"100%", height:"352", frameBorder:"0", allowfullscreen:"", allow:"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture", loading:"lazy"}}></iframe>
+      {/* <audio src="https://learn.shayhowe.com.s3-website-us-east-1.amazonaws.com/assets/misc/courses/html-css/adding-media/jazz.ogg" controls></audio> */}
     </div>
     <div>
       <p>BaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaaBaa</p>
